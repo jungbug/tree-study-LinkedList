@@ -36,24 +36,17 @@ class LinkedList{
     }
 
     delete(idx:number){
-        let i = 1
-            let n = this.head
-            while(n.next){
-                if(i === idx){
-                    console.log(this.head)
-                    console.log(this.head.next)
-                    console.log(n.next)
-                    // console.log(n.next)
-                    this.head = n.next.next
-                    // n = n.next
-                    // console.log(n.next.next)
-                    // n.next = n.next.next
-                    // console.log(this.head)
-                    break
-                }
-                i++
-                n = n.next
+        let i = 0
+        let n = this.head
+        while(n.next){
+            if(i === idx-1){
+                n.next = n.next.next
+                return true
             }
+            i++
+            n = n.next
+        }
+        throw new Error("추가를 못함")
     }
 
     traverse(){
@@ -73,18 +66,18 @@ class LinkedList{
 }
 
 const linkedList = new LinkedList()
-const n1 = new ListNode(3)
-const n2 = new ListNode(10)
-const n3 = new ListNode(2)
-const n4 = new ListNode(1)
+const n1 = new ListNode(1)
+const n2 = new ListNode(2)
+const n3 = new ListNode(3)
+const n4 = new ListNode(4)
 linkedList.add(n1)
 linkedList.add(n2)
 linkedList.add(n3)
 linkedList.add(n4)
 
-const middleN = new ListNode(20)
-linkedList.add(middleN, 3)
-linkedList.delete(1)
+// const middleN = new ListNode(20)
+// linkedList.add(middleN, 3)
+linkedList.delete(5)
 
 
 const rr = linkedList.traverse()
