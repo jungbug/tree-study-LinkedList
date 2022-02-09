@@ -42,7 +42,6 @@ class BST {
     }
 }
 
-
 const bst = new BST()
 
 bst.insert(8)
