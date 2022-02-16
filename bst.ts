@@ -10,7 +10,6 @@ class TreeNode{
 
 class BST {
     root: TreeNode = null;
-
     insert(data:number){
         let node = this.root
         if(node == null){
