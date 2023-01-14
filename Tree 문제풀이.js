@@ -28,7 +28,6 @@ const categories = [
 
 
 const makeTree = (categories, parent) => {
-    // key와 value가 추가되야함!! => 재귀!!(무조건 인자로 뭘 넣아야할 지 ???)
     let node = {}
     categories
         .filter(c => c.parent === parent)
